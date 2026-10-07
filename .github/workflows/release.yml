@@ -25,9 +25,11 @@ jobs:
 
       - run: uv sync --locked
 
-      - run: uv run comfaq pdf comfaq.pdf
+      - run: mkdir dist
 
-      - run: uv run comfaq csv comfaq.csv
+      - run: uv run comfaq pdf dist/comfaq.pdf
+
+      - run: uv run comfaq csv dist/comfaq.csv
 
       - name: publish latest release
         env:
@@ -37,4 +39,13 @@ jobs:
           git push -f origin latest
           gh release view latest || gh release create latest --title "Latest" --notes ""
           gh release edit latest --notes "Built from ${GITHUB_SHA}"
-          gh release upload latest comfaq.pdf comfaq.csv --clobber
+          gh release upload latest dist/comfaq.pdf dist/comfaq.csv --clobber
+
+      - name: publish dist branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ github.token }}
+          publish_branch: dist
+          publish_dir: ./dist
+          force_orphan: true
+          full_commit_message: Built from ${{ github.sha }}
