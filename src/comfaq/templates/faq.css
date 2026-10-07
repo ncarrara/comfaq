@@ -51,6 +51,10 @@ body {
   padding-top: 0.5em;
 }
 
+.entry + .entry {
+  page-break-before: always;
+}
+
 .entry h2 {
   font-size: 12pt;
   margin: 0;
