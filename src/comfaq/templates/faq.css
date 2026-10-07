@@ -49,10 +49,7 @@ body {
   border-top: 1px solid #ccc;
   margin-top: 1em;
   padding-top: 0.5em;
-}
-
-.entry + .entry {
-  page-break-before: always;
+  page-break-inside: avoid;
 }
 
 .entry h2 {
