@@ -1,10 +1,11 @@
 import csv
 import io
 from collections import defaultdict
-from pathlib import Path
 from urllib.request import urlopen
 
 import frontmatter
+
+from comfaq.entries import ENTRIES_DIR
 
 SHEET_ID = "1I8xtyR8RCIebIOxnJhyDUJ4YkOlDxJAv91PLwx_3x3k"
 TABS = {
@@ -12,7 +13,6 @@ TABS = {
     "clarification": "1736850956",
 }
 CONTENT_COLUMNS = ["Turn Order", "Category", "Question", "Ruling", "Referenced Rules"]
-ENTRIES_DIR = Path(__file__).resolve().parents[2] / "entries"
 
 
 def fetch_rows(gid: str) -> list[dict[str, str]]:
@@ -52,7 +52,7 @@ def merge_duplicates(rows_by_id: dict[int, list[tuple[str, dict[str, str]]]]) ->
     return merged
 
 
-def main() -> None:
+def import_entries() -> None:
     rows_by_id: dict[int, list[tuple[str, dict[str, str]]]] = defaultdict(list)
     for entry_type, gid in TABS.items():
         for row in fetch_rows(gid):
@@ -65,6 +65,3 @@ def main() -> None:
         (entry_dir / "index.md").write_text(frontmatter.dumps(post, sort_keys=False) + "\n", encoding="utf-8")
     print(f"imported {len(entries)} entries into {ENTRIES_DIR}")
 
-
-if __name__ == "__main__":
-    main()

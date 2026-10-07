@@ -1,0 +1,84 @@
+@page {
+  size: A4;
+  margin: 2cm;
+  @bottom-center {
+    content: counter(page);
+    font-size: 9pt;
+  }
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 10pt;
+  line-height: 1.4;
+}
+
+.cover {
+  text-align: center;
+  padding-top: 8cm;
+  page-break-after: always;
+}
+
+.toc {
+  page-break-after: always;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 1em;
+}
+
+.toc a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc a::after {
+  content: leader(".") target-counter(attr(href), page);
+}
+
+.category {
+  page-break-before: always;
+}
+
+.category > h1 {
+  border-bottom: 2px solid #333;
+}
+
+.entry {
+  border-top: 1px solid #ccc;
+  margin-top: 1em;
+  padding-top: 0.5em;
+}
+
+.entry h2 {
+  font-size: 12pt;
+  margin: 0;
+}
+
+.badge {
+  font-size: 8pt;
+  font-weight: normal;
+  color: #fff;
+  background: #555;
+  border-radius: 3px;
+  padding: 1px 5px;
+  vertical-align: middle;
+}
+
+.entry h3 {
+  font-size: 9pt;
+  text-transform: uppercase;
+  color: #555;
+  margin: 0.8em 0 0.2em;
+}
+
+.meta,
+.references {
+  color: #666;
+  font-size: 9pt;
+}
+
+img {
+  max-width: 100%;
+}

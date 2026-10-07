@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Old World Community FAQ</title>
+</head>
+<body>
+<section class="cover">
+  <h1>The Old World<br>Community FAQ</h1>
+  <p>Generated on {{ generated_on }}</p>
+</section>
+
+<nav class="toc">
+  <h2>Contents</h2>
+  <ul>
+    {% for category in categories %}
+    <li><a href="#category-{{ loop.index }}">{{ category }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% for category, entries in categories.items() %}
+<section class="category" id="category-{{ loop.index }}">
+  <h1>{{ category }}</h1>
+  {% for entry in entries %}
+  <article class="entry">
+    <h2>#{{ entry.id }}{% if entry.type == "clarification" %} <span class="badge">Clarification</span>{% endif %}</h2>
+    <p class="meta">{{ entry.turn_order }}</p>
+    {{ bodies[entry.id]|safe }}
+    {% if entry.rule_references %}
+    <p class="references">References: {{ entry.rule_references|join(", ") }}</p>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
+</body>
+</html>

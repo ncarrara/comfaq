@@ -1,0 +1,27 @@
+name: pdf
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - run: sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0
+
+      - run: uv sync --locked
+
+      - run: uv run comfaq pdf comfaq.pdf
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: comfaq-pdf
+          path: comfaq.pdf
