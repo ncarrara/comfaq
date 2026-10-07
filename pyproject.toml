@@ -1,0 +1,20 @@
+[project]
+name = "comfaq"
+version = "0.1.0"
+description = "Warhammer: the old world, community FAQ"
+readme = "README.md"
+authors = [
+    { name = "nicolas carrara", email = "nicolas.carrara1u@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "python-frontmatter>=1.1.0",
+]
+
+[project.scripts]
+comfaq = "comfaq:main"
+import-gsheet = "comfaq.import_gsheet:main"
+
+[build-system]
+requires = ["uv_build>=0.9.0,<0.11.0"]
+build-backend = "uv_build"
