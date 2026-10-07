@@ -1,4 +1,4 @@
-name: pdf
+name: release
 
 on:
   push:
@@ -8,14 +8,16 @@ permissions:
   contents: write
 
 concurrency:
-  group: pdf
+  group: release
   cancel-in-progress: true
 
 jobs:
-  pdf:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: astral-sh/setup-uv@v6
 
@@ -25,6 +27,8 @@ jobs:
 
       - run: uv run comfaq pdf comfaq.pdf
 
+      - run: uv run comfaq csv comfaq.csv
+
       - name: publish latest release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -33,4 +37,4 @@ jobs:
           git push -f origin latest
           gh release view latest || gh release create latest --title "Latest" --notes ""
           gh release edit latest --notes "Built from ${GITHUB_SHA}"
-          gh release upload latest comfaq.pdf --clobber
+          gh release upload latest comfaq.pdf comfaq.csv --clobber
