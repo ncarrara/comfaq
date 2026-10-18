@@ -5,7 +5,7 @@ from urllib.request import urlopen
 
 import frontmatter
 
-from comfaq.entries import ENTRIES_DIR
+from comfaq.entries import ENTRIES_DIR, format_body, write_entry
 
 SHEET_ID = "1I8xtyR8RCIebIOxnJhyDUJ4YkOlDxJAv91PLwx_3x3k"
 TABS = {
@@ -27,9 +27,8 @@ def clean(text: str) -> str:
 
 
 def to_post(entry_type: str, row: dict[str, str]) -> frontmatter.Post:
-    content = f"## Question\n\n{clean(row['Question'])}\n\n## Ruling\n\n{clean(row['Ruling'])}"
     return frontmatter.Post(
-        content,
+        format_body(clean(row["Question"]), clean(row["Ruling"])),
         id=int(row["ID"]),
         type=entry_type,
         categories=[row["Category"].strip()],
@@ -59,9 +58,6 @@ def import_entries() -> None:
             rows_by_id[int(row["ID"])].append((entry_type, row))
     entries = merge_duplicates(rows_by_id)
     for entry_type, row in entries:
-        post = to_post(entry_type, row)
-        entry_dir = ENTRIES_DIR / f"{post['id']:04d}"
-        entry_dir.mkdir(parents=True, exist_ok=True)
-        (entry_dir / "index.md").write_text(frontmatter.dumps(post, sort_keys=False) + "\n", encoding="utf-8")
+        write_entry(to_post(entry_type, row))
     print(f"imported {len(entries)} entries into {ENTRIES_DIR}")
 
