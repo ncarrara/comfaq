@@ -3,13 +3,17 @@ import subprocess
 from typing import Any, Iterator
 from urllib.request import Request, urlopen
 
-from comfaq.changelog import changed_entries, entry_snapshot, git, log_commits
+from comfaq.changelog import changed_entries, entry_diff, entry_snapshot, log_commits
 from comfaq.entries import ENTRIES_DIR
 
 MAX_EMBEDS = 10
 MAX_MESSAGE_LENGTH = 5500
 DIFF_LINE_LENGTH = 300
 DIFF_LENGTH = 900
+CONTEXT_LENGTH = 60
+ANSI_RESET = "\u001b[0m"
+ANSI_LINE = {"-": "\u001b[0;31m", "+": "\u001b[0;32m"}
+ANSI_EMPHASIS = {"-": "\u001b[1;4;31m", "+": "\u001b[1;4;32m"}
 USER_AGENT = "DiscordBot (https://github.com/ncarrara/comfaq, 1.0)"
 DISCORD_API_URL = "https://discord.com/api/v10"
 CHANNEL_NAME = "comfaq-updates"
@@ -37,28 +41,74 @@ def entry_url(site_url: str, sheet: str, snapshot: dict) -> str:
     return f"{site_url}/faq/entry/{source}:{'faq' if source == 'faq' else sheet}:{snapshot['id']}"
 
 
-def prefixed_lines(prefix: str, text: str) -> list[str]:
-    return [f"{prefix} {truncate(line, DIFF_LINE_LENGTH)}" for line in text.splitlines() if line.strip()]
+def colored_line(sign: str, body: str) -> str:
+    return f"{ANSI_LINE[sign]}{sign} {body}{ANSI_RESET}"
+
+
+def whole_text_lines(sign: str, text: str) -> list[str]:
+    return [colored_line(sign, truncate(line, DIFF_LINE_LENGTH)) for line in text.splitlines() if line.strip()]
+
+
+def trim_context(text: str, is_first: bool, is_last: bool) -> str:
+    if len(text) <= 2 * CONTEXT_LENGTH + 1:
+        return text
+    if is_first and not is_last:
+        return "…" + text[-CONTEXT_LENGTH:]
+    if is_last and not is_first:
+        return text[:CONTEXT_LENGTH] + "…"
+    return text[:CONTEXT_LENGTH] + "…" + text[-CONTEXT_LENGTH:]
+
+
+def render_word_diff_line(tokens: list[tuple[str, str]]) -> list[str]:
+    if all(kind == " " for kind, _ in tokens):
+        return []
+    rendered = []
+    for sign in ("-", "+"):
+        kept = [(kind, text.strip()) for kind, text in tokens if kind in (" ", sign) and text.strip()]
+        if not kept:
+            continue
+        body = " ".join(
+            ANSI_LINE[sign] + trim_context(text, index == 0, index == len(kept) - 1) if kind == " "
+            else ANSI_EMPHASIS[sign] + truncate(text, DIFF_LINE_LENGTH)
+            for index, (kind, text) in enumerate(kept)
+        )
+        rendered.append(colored_line(sign, body))
+    return rendered
+
+
+def word_diff_lines(porcelain: str) -> list[str]:
+    lines = []
+    tokens: list[tuple[str, str]] = []
+    for line in porcelain.splitlines():
+        if line.startswith("@@"):
+            continue
+        if line == "~":
+            lines.extend(render_word_diff_line(tokens))
+            tokens = []
+        elif line:
+            tokens.append((line[0], line[1:]))
+    lines.extend(render_word_diff_line(tokens))
+    return lines
 
 
 def diff_lines(status: str, sha: str, path: str, snapshot: dict) -> list[str]:
     if status == "added":
-        return prefixed_lines("+", snapshot["question"]) + prefixed_lines("+", snapshot["ruling"])
+        return whole_text_lines("+", snapshot["question"]) + whole_text_lines("+", snapshot["ruling"])
     if status == "deleted":
-        return prefixed_lines("-", snapshot["question"]) + prefixed_lines("-", snapshot["ruling"])
-    diff = git("diff", "-U0", f"{sha}^", sha, "--", path).splitlines()
-    return [
-        f"{line[0]} {truncate(line[1:], DIFF_LINE_LENGTH)}"
-        for line in diff
-        if line[:1] in ("+", "-") and not line.startswith(("+++", "---")) and line[1:].strip()
-    ]
+        return whole_text_lines("-", snapshot["question"]) + whole_text_lines("-", snapshot["ruling"])
+    return word_diff_lines(entry_diff(sha, path))
 
 
 def diff_block(lines: list[str]) -> str:
-    text = "\n".join(lines).replace("```", "'''")
-    if len(text) > DIFF_LENGTH:
-        text = text[:DIFF_LENGTH].rsplit("\n", 1)[0] + "\n…"
-    return f"```diff\n{text}\n```"
+    kept: list[str] = []
+    length = 0
+    for line in lines:
+        if kept and length + len(line) > DIFF_LENGTH:
+            kept.append("…")
+            break
+        kept.append(line.replace("```", "'''"))
+        length += len(line) + 1
+    return "```ansi\n" + "\n".join(kept) + "\n```"
 
 
 def change_embed(commit: dict, status: str, path: str, repo: str, site_url: str, sheet: str) -> dict:
