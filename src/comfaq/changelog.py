@@ -1,6 +1,7 @@
 import json
 import re
 import subprocess
+from collections import defaultdict
 from pathlib import Path
 
 import frontmatter
@@ -9,7 +10,7 @@ from comfaq.csv_export import split_sections
 from comfaq.entries import ENTRIES_DIR
 
 STATUSES = {"A": "added", "M": "modified", "D": "deleted"}
-ENTRY_PATH_PATTERN = re.compile(r"^entries/\d+/index\.md$")
+ENTRY_PATH_PATTERN = re.compile(r"^entries/(\d+)/index\.md$")
 
 
 def git(*args: str) -> str:
@@ -17,28 +18,52 @@ def git(*args: str) -> str:
     return result.stdout
 
 
+def log_commits(*args: str) -> list[dict[str, str]]:
+    log = git("log", "--no-merges", *args, "--format=%H%x09%cI%x09%an%x09%s", "--", "entries")
+    commits = []
+    for line in log.splitlines():
+        sha, date, author, message = line.split("\t", 3)
+        commits.append({"sha": sha, "date": date, "author": author, "message": message})
+    return commits
+
+
+def changed_entries(sha: str) -> list[tuple[str, str]]:
+    changes = []
+    for line in git("show", "--no-renames", "--format=", "--name-status", sha, "--", "entries").splitlines():
+        status, path = line.split("\t")
+        if ENTRY_PATH_PATTERN.match(path):
+            changes.append((STATUSES[status], path))
+    return changes
+
+
 def entry_at(revision: str, path: str) -> dict[str, str | int]:
     post = frontmatter.loads(git("show", f"{revision}:{path}"))
     return {"id": post["id"], "type": post["type"], "question": split_sections(post.content)["Question"]}
 
 
-def commit_changes(sha: str) -> list[dict[str, str | int]]:
-    changes = []
-    for line in git("show", "--no-renames", "--format=", "--name-status", sha, "--", "entries").splitlines():
-        status, path = line.split("\t")
-        if not ENTRY_PATH_PATTERN.match(path):
-            continue
-        revision = f"{sha}^" if status == "D" else sha
-        changes.append({"status": STATUSES[status], **entry_at(revision, path)})
-    return sorted(changes, key=lambda change: change["id"])
+def entry_diff(sha: str, path: str) -> str:
+    diff = git("diff", "--word-diff=porcelain", f"{sha}^", sha, "--", path)
+    return diff[diff.index("@@"):]
 
 
 def build_changelog(output: Path, limit: int) -> None:
     commits = []
-    log = git("log", "--no-merges", f"-n{limit}", "--format=%H%x09%cI%x09%an%x09%s", "--", "entries")
-    for line in log.splitlines():
-        sha, date, author, message = line.split("\t", 3)
-        changes = commit_changes(sha)
+    for commit in log_commits(f"-n{limit}"):
+        changes = [
+            {"status": status, **entry_at(f"{commit['sha']}^" if status == "deleted" else commit["sha"], path)}
+            for status, path in changed_entries(commit["sha"])
+        ]
         if changes:
-            commits.append({"sha": sha, "date": date, "author": author, "message": message, "changes": changes})
+            commits.append({**commit, "changes": sorted(changes, key=lambda change: change["id"])})
     output.write_text(json.dumps(commits, ensure_ascii=False), encoding="utf-8")
+
+
+def build_history(output: Path) -> None:
+    history: defaultdict[int, list[dict[str, str]]] = defaultdict(list)
+    for commit in log_commits():
+        for status, path in changed_entries(commit["sha"]):
+            change = {**commit, "status": status}
+            if status == "modified":
+                change["diff"] = entry_diff(commit["sha"], path)
+            history[int(ENTRY_PATH_PATTERN.match(path).group(1))].append(change)
+    output.write_text(json.dumps(history, ensure_ascii=False), encoding="utf-8")

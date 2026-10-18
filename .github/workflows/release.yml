@@ -29,11 +29,13 @@ jobs:
 
       - run: mkdir dist
 
-      - run: uv run comfaq pdf dist/comfaq.pdf
+      - run: uv run comfaq pdf dist/comfaq.pdf --branch "$GITHUB_REF_NAME"
 
       - run: uv run comfaq csv dist/comfaq.csv
 
       - run: uv run comfaq changelog dist/changes.json --limit 30
+
+      - run: uv run comfaq history dist/history.json
 
       - name: publish latest release
         if: github.ref_name == 'main'
@@ -44,7 +46,7 @@ jobs:
           git push -f origin latest
           gh release view latest || gh release create latest --title "Latest" --notes ""
           gh release edit latest --notes "Built from ${GITHUB_SHA}"
-          gh release upload latest dist/comfaq.pdf dist/comfaq.csv dist/changes.json --clobber
+          gh release upload latest dist/comfaq.pdf dist/comfaq.csv dist/changes.json dist/history.json --clobber
 
       - name: publish dist branch
         uses: peaceiris/actions-gh-pages@v4

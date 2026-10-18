@@ -7,6 +7,7 @@
 <body>
 <section class="cover">
   <h1>The Old World<br>Community FAQ</h1>
+  <p class="branch">Branch {{ branch }}</p>
   <p>Generated on {{ generated_on }}</p>
 </section>
 
@@ -23,8 +24,8 @@
 <section class="category" id="category-{{ loop.index }}">
   <h1>{{ category }}</h1>
   {% for entry in entries %}
-  <article class="entry">
-    <h2>#{{ entry.id }}{% if entry.type == "clarification" %} <span class="badge">Clarification</span>{% elif entry.type == "gw_faq" %} <span class="badge">GW FAQ</span>{% endif %}</h2>
+  <article class="entry entry-{{ entry.type }}">
+    <h2>#{{ entry.id }} <span class="badge">{{ type_labels[entry.type] }}</span></h2>
     {% if entry.turn_order %}<p class="meta">{{ entry.turn_order }}</p>{% endif %}
     {{ bodies[entry.id]|safe }}
     {% if entry.rule_references %}

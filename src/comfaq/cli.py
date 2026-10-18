@@ -3,7 +3,7 @@ from typing import Annotated
 
 import typer
 
-from comfaq.changelog import build_changelog
+from comfaq.changelog import build_changelog, build_history
 from comfaq.csv_export import build_csv
 from comfaq.import_gsheet import import_entries
 from comfaq.import_gw_faq import import_gw_faq
@@ -23,8 +23,8 @@ def import_gw_faq_command() -> None:
 
 
 @app.command()
-def pdf(output: Path) -> None:
-    build_pdf(output)
+def pdf(output: Path, branch: Annotated[str, typer.Option()]) -> None:
+    build_pdf(output, branch)
 
 
 @app.command("csv")
@@ -35,3 +35,8 @@ def csv_command(output: Path) -> None:
 @app.command()
 def changelog(output: Path, limit: Annotated[int, typer.Option()]) -> None:
     build_changelog(output, limit)
+
+
+@app.command()
+def history(output: Path) -> None:
+    build_history(output)

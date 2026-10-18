@@ -10,6 +10,7 @@ from comfaq.entries import ENTRIES_DIR, Entry, load_entries
 
 TEMPLATES_DIR = Path(__file__).parent / "templates"
 HEADING_SHIFT = 1
+TYPE_LABELS = {"faq": "Comfaq", "clarification": "Clarification", "gw_faq": "GW FAQ"}
 
 
 def render_markdown(markdown: MarkdownIt, entry: Entry) -> str:
@@ -32,7 +33,7 @@ def group_by_category(entries: list[Entry]) -> dict[str, list[Entry]]:
     return dict(sorted(categories.items()))
 
 
-def build_pdf(output: Path) -> None:
+def build_pdf(output: Path, branch: str) -> None:
     markdown = MarkdownIt("commonmark")
     entries = load_entries()
     environment = Environment(loader=PackageLoader("comfaq"), autoescape=True)
@@ -40,5 +41,7 @@ def build_pdf(output: Path) -> None:
         categories=group_by_category(entries),
         bodies={entry.id: render_markdown(markdown, entry) for entry in entries},
         generated_on=date.today().isoformat(),
+        branch=branch,
+        type_labels=TYPE_LABELS,
     )
     HTML(string=html, base_url=str(ENTRIES_DIR)).write_pdf(output, stylesheets=[CSS(filename=TEMPLATES_DIR / "faq.css")])
