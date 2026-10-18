@@ -19,7 +19,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: echo "DIST_BRANCH=dist-$(printf %s "$GITHUB_REF_NAME" | tr -c 'A-Za-z0-9_-' '-')" >> "$GITHUB_ENV"
+      - run: |
+          BRANCH_SLUG=$(printf %s "$GITHUB_REF_NAME" | tr -c 'A-Za-z0-9_-' '-')
+          echo "DIST_BRANCH=dist-$BRANCH_SLUG" >> "$GITHUB_ENV"
+          if [ "$GITHUB_REF_NAME" = main ]; then echo "SHEET=comfaq" >> "$GITHUB_ENV"; else echo "SHEET=comfaq-$BRANCH_SLUG" >> "$GITHUB_ENV"; fi
 
       - uses: astral-sh/setup-uv@v6
 
@@ -56,3 +59,17 @@ jobs:
           publish_dir: ./dist
           force_orphan: true
           full_commit_message: Built from ${{ github.sha }}
+
+      - name: notify discord
+        if: github.ref_name == 'main' || github.ref_name == 'test_faq'
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          BEFORE: ${{ github.event.before }}
+        run: >-
+          uv run comfaq discord
+          --before "$BEFORE"
+          --after "$GITHUB_SHA"
+          --branch "$GITHUB_REF_NAME"
+          --sheet "$SHEET"
+          --repo "$GITHUB_REPOSITORY"
+          --site-url https://warhammaking.com

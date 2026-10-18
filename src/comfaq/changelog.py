@@ -60,16 +60,20 @@ def entry_diff(sha: str, path: str) -> str:
     return diff[diff.index("@@"):]
 
 
-def build_changelog(output: Path, limit: int) -> None:
+def changelog_commits(*args: str) -> list[dict]:
     commits = []
-    for commit in log_commits(f"-n{limit}"):
+    for commit in log_commits(*args):
         changes = [
             {"status": status, **entry_at(f"{commit['sha']}^" if status == "deleted" else commit["sha"], path)}
             for status, path in changed_entries(commit["sha"])
         ]
         if changes:
             commits.append({**commit, "changes": sorted(changes, key=lambda change: change["id"])})
-    output.write_text(json.dumps(commits, ensure_ascii=False), encoding="utf-8")
+    return commits
+
+
+def build_changelog(output: Path, limit: int) -> None:
+    output.write_text(json.dumps(changelog_commits(f"-n{limit}"), ensure_ascii=False), encoding="utf-8")
 
 
 def build_history(output: Path) -> None:
