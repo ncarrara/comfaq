@@ -19,4 +19,4 @@ Do these modifiers to the charge roll results count when determining the movemen
 ## Ruling
 
 The modifiers are not part of the charge roll and abilities that let you reroll the charge roll cannot be applied for modifiers.
-However, as a failed charge references the charge roll, it uses the result of the charge roll with modifiers, not precising "without modifiers" for the determination of the failed charge move.
+However, as a failed charge references the charge roll, it uses the result of the charge roll with modifiers, not precising "without modifiers" for the determination of the failed charge move. (test here as well)
