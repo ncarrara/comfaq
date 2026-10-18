@@ -13,7 +13,7 @@ rule_references:
 
 ## Question
 
-Do Excess Wounds from Multiple Wounds (X) count for Overkill vs. non-Character models (Champions)?
+Do Excess Wounds (test for comfaq updates) from Multiple Wounds (X) count for Overkill vs. non-Character models (Champions)?
 
 ## Ruling
 
