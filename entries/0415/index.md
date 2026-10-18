@@ -1,5 +1,5 @@
 ---
-id: 67
+id: 415
 type: faq
 categories:
 - Basic Rules
