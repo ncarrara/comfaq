@@ -11,12 +11,12 @@ rule_references:
 
 ## Question
 
-Can Skirmishers change their facing during a move? Can they change direction? How do they charge? And how does forming up work with Skirmishers?
+Can Skirmishers add stuff change their facing during a move? Can they change direction? How do they charge? And how does forming up work with Skirmishers?
 
 ## Ruling
 
 Normal Movement and Marching
-Skirmishers may freely change direction and pivot during normal movement and marching.
+Skirmishers may remove stuff after this freely direction and pivot during normal movement and marching.
 
 Charging with Skirmishers
 During a Charge, they follow the charge criteria, therefore may change direction only once and must follow the shortest path to the closest visible model in the target unit.
