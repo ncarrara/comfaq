@@ -36,9 +36,23 @@ def changed_entries(sha: str) -> list[tuple[str, str]]:
     return changes
 
 
-def entry_at(revision: str, path: str) -> dict[str, str | int]:
+def entry_snapshot(revision: str, path: str) -> dict[str, str | int]:
     post = frontmatter.loads(git("show", f"{revision}:{path}"))
-    return {"id": post["id"], "type": post["type"], "question": split_sections(post.content)["Question"]}
+    sections = split_sections(post.content)
+    return {
+        "id": post["id"],
+        "type": post["type"],
+        "question": sections["Question"],
+        "ruling": sections["Ruling"],
+        "category": ", ".join(post["categories"]),
+        "turn_order": post["turn_order"],
+        "rule_references": "\n".join(post["rule_references"]),
+    }
+
+
+def entry_at(revision: str, path: str) -> dict[str, str | int]:
+    snapshot = entry_snapshot(revision, path)
+    return {"id": snapshot["id"], "type": snapshot["type"], "question": snapshot["question"]}
 
 
 def entry_diff(sha: str, path: str) -> str:
@@ -59,11 +73,13 @@ def build_changelog(output: Path, limit: int) -> None:
 
 
 def build_history(output: Path) -> None:
-    history: defaultdict[int, list[dict[str, str]]] = defaultdict(list)
+    history: defaultdict[int, list[dict[str, str | dict[str, str | int]]]] = defaultdict(list)
     for commit in log_commits():
         for status, path in changed_entries(commit["sha"]):
-            change = {**commit, "status": status}
+            change: dict[str, str | dict[str, str | int]] = {**commit, "status": status}
             if status == "modified":
                 change["diff"] = entry_diff(commit["sha"], path)
+            if status == "deleted":
+                change["entry"] = entry_snapshot(f"{commit['sha']}^", path)
             history[int(ENTRY_PATH_PATTERN.match(path).group(1))].append(change)
     output.write_text(json.dumps(history, ensure_ascii=False), encoding="utf-8")
