@@ -31,6 +31,8 @@ jobs:
 
       - run: uv run comfaq csv dist/comfaq.csv
 
+      - run: uv run comfaq changelog dist/changes.json --limit 30
+
       - name: publish latest release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -39,7 +41,7 @@ jobs:
           git push -f origin latest
           gh release view latest || gh release create latest --title "Latest" --notes ""
           gh release edit latest --notes "Built from ${GITHUB_SHA}"
-          gh release upload latest dist/comfaq.pdf dist/comfaq.csv --clobber
+          gh release upload latest dist/comfaq.pdf dist/comfaq.csv dist/changes.json --clobber
 
       - name: publish dist branch
         uses: peaceiris/actions-gh-pages@v4
