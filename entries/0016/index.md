@@ -10,8 +10,8 @@ rule_references:
 
 ## Question
 
-If a model makes some sort of special attack, like Slayer Deathblow, Nurgling Attacks or Blood of Hashut, do Special rules of that model that apply to its normal attacks also apply to these attacks?
+If a model makes some of that model that apply to its normal attacks also apply to these attacks?
 
 ## Ruling
 
-Unless the special rules states Weapon Attack (Armour Bane) and the attack is not made by a Weapon, all special rules translate onto these attacks
+Unless the special rules ahah! states Weapon Attack (Armour Bane) and the attack is not made by a Weapon, all special rules translate onto these attacks
