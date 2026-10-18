@@ -1,0 +1,16 @@
+name: cleanup
+
+on: delete
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.event.ref_type == 'branch' && github.event.ref != 'dist' && !startsWith(github.event.ref, 'dist-')
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REF: ${{ github.event.ref }}
+        run: gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/dist-$(printf %s "$REF" | tr -c 'A-Za-z0-9_-' '-')"
