@@ -4,13 +4,19 @@ type: faq
 categories:
 - Armybuilding
 turn_order: 0 General Rules
-rule_references: []
+rule_references:
+- Champions CRB 199
+- Challenges CRB 207ff
 ---
 
 ## Question
 
-There are a some items, which have restrictions for "characters" regarding the acess or the use of these items. Can unit champions with access to magic items buy or use these items?
+When is a Champion counted as a Character, and when not?
 
 ## Ruling
 
-If the type of character is not specified further (for example "beastmen chieftain only or necromancer only"), champions are allowed to take and use these items with the same restrictions. If the items have any restrictions that apply generally to Characters, those restrictions also apply to non-Characters models that can take the items.
+Champions count as Characters for Challenges, including rules interactions such as Bretonnian Blessings (Regaining the Blessing and Losing the Blessing) and Wolves of the Sea (Favour of the Gods) / Hordes of Chaos (For the Dark Gods!).
+
+For no other situation, item or rules interaction they count as Character. They have their own rules on pg. 199; which are to be followed. The exception for magic missiles being able to be shot by a champion against a separate target still applies. Champions can use a set of weapon in combats different to that of their unit if they are equipped with it. They are removed if the entire unit is removed, wounds lost are allocated last to the champion of a unit.
+
+They cannot move through the ranks and cannot use items which speak of characters using them, even if they can buy them. In addition, only Characters have command range, so Champions cannot use any item that requires command range to work. In addition, they do not benefit from additional magic item point allowance allocated to characters in some armies of infamy

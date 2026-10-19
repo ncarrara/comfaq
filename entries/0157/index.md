@@ -1,6 +1,6 @@
 ---
 id: 157
-type: faq
+type: clarification
 categories:
 - Characters
 turn_order: 0 General Rules

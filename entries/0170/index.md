@@ -1,6 +1,6 @@
 ---
 id: 170
-type: faq
+type: clarification
 categories:
 - Characters
 turn_order: 1-2 Strategy Phase Command

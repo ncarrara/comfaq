@@ -14,4 +14,4 @@ If a unit of skirmishers takes casualties and has no other choice than to remove
 
 ## Ruling
 
-Any model out of coherency, including characters, is removed from play as casualty.
+As stated on Core Rulebook at pag. 184 no models can be removed if their removal would cause a unit to lose coeherency. When it is not possible to remove a model without losing coherency simply exchange the model with the closest model. Remove the exchanged model instead.
