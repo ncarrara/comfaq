@@ -1,11 +1,12 @@
 import csv
 import io
+import shutil
 from collections import defaultdict
 from urllib.request import urlopen
 
 import frontmatter
 
-from comfaq.entries import ENTRIES_DIR, format_body, write_entry
+from comfaq.entries import ENTRIES_DIR, CommunityEntry, format_body, load_entries, write_entry
 
 SHEET_ID = "1I8xtyR8RCIebIOxnJhyDUJ4YkOlDxJAv91PLwx_3x3k"
 TABS = {
@@ -52,6 +53,7 @@ def merge_duplicates(rows_by_id: dict[int, list[tuple[str, dict[str, str]]]]) ->
 
 
 def import_entries() -> None:
+    existing = [entry for entry in load_entries() if isinstance(entry, CommunityEntry)]
     rows_by_id: dict[int, list[tuple[str, dict[str, str]]]] = defaultdict(list)
     for entry_type, gid in TABS.items():
         for row in fetch_rows(gid):
@@ -59,5 +61,8 @@ def import_entries() -> None:
     entries = merge_duplicates(rows_by_id)
     for entry_type, row in entries:
         write_entry(to_post(entry_type, row))
-    print(f"imported {len(entries)} entries into {ENTRIES_DIR}")
+    removed = [entry for entry in existing if entry.id not in rows_by_id]
+    for entry in removed:
+        shutil.rmtree(entry.directory)
+    print(f"imported {len(entries)} entries into {ENTRIES_DIR}, removed {len(removed)}")
 
