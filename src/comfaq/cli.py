@@ -9,6 +9,7 @@ from comfaq.discord import send_discord
 from comfaq.import_gsheet import import_entries
 from comfaq.import_gw_faq import import_gw_faq
 from comfaq.pdf import build_pdf
+from comfaq.tags import add_tag
 
 app = typer.Typer()
 
@@ -21,6 +22,11 @@ def import_gsheet_command() -> None:
 @app.command("import-gw-faq")
 def import_gw_faq_command() -> None:
     import_gw_faq()
+
+
+@app.command("add-tag")
+def add_tag_command(tag: str, ids_file: Path) -> None:
+    add_tag(tag, ids_file)
 
 
 @app.command()

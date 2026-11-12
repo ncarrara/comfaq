@@ -7,6 +7,8 @@ turn_order: 4-4 Follow Up & Pursuit
 rule_references:
 - Accidental Contact CRB 130
 - Follow Up CRB 156
+tags:
+- essential
 ---
 
 ## Question

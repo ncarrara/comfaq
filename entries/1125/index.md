@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Tomb Kings of Khemri
+tags: []
 ---
 
 ## Question

@@ -6,6 +6,7 @@ categories:
 turn_order: 4-1 Combat Phase Choose Combat & Determine Who Can Fight
 rule_references:
 - Split Profile (War Machine) CRB 197
+tags: []
 ---
 
 ## Question

@@ -7,6 +7,8 @@ turn_order: 0 General Rules
 rule_references:
 - Scouts CRB 188
 - Deployment CRB 285
+tags:
+- essential
 ---
 
 ## Question

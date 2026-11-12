@@ -7,6 +7,7 @@ turn_order: 2-4 Movement Phase Remaining Moves
 rule_references:
 - Dragged Along CRB 167
 - Fly (X) CRB 169
+tags: []
 ---
 
 ## Question

@@ -8,6 +8,8 @@ rule_references:
 - GW FAQ
 - Formed up Skirmishers
 - Skirmishers in Combat
+tags:
+- essential
 ---
 
 ## Question

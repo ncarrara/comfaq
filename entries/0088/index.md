@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Hatred CRB 171
+tags: []
 ---
 
 ## Question

@@ -6,6 +6,8 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Characters CRB 205 - 210
+tags:
+- essential
 ---
 
 ## Question

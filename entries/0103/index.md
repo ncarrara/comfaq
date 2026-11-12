@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Magic Resistance CRB 173Obsidian Lodestone CRB 341
+tags: []
 ---
 
 ## Question

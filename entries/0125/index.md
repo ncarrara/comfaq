@@ -6,6 +6,8 @@ categories:
 turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - The Charge Move CRB 126Multiple Charge Targets CRB 130
+tags:
+- essential
 ---
 
 ## Question

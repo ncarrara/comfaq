@@ -6,6 +6,7 @@ categories:
 turn_order: 0 Faction Rules
 rule_references:
 - Pigeon Bombs Forces of Fantasy 77
+tags: []
 ---
 
 ## Question

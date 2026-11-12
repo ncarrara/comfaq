@@ -5,6 +5,7 @@ categories:
 - Magic
 turn_order: 0 General Rules
 rule_references: []
+tags: []
 ---
 
 ## Question

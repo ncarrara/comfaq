@@ -7,6 +7,7 @@ turn_order: 0 General Rules
 rule_references:
 - Split Profile CRB 97
 - GW FAQ
+tags: []
 ---
 
 ## Question

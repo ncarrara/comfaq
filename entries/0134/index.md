@@ -6,6 +6,7 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Bretonnia The Lance Formation FOF 110 - 111
+tags: []
 ---
 
 ## Question

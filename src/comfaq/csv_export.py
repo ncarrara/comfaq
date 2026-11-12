@@ -6,7 +6,7 @@ from pathlib import Path
 from comfaq.entries import Entry, load_entries
 
 SECTION_PATTERN = re.compile(r"^## (.+)$", re.MULTILINE)
-COLUMNS = ["ID", "Type", "Turn Order", "Category", "Question", "Ruling", "Date", "Referenced Rules", "Change Log"]
+COLUMNS = ["ID", "Type", "Turn Order", "Category", "Question", "Ruling", "Date", "Referenced Rules", "Change Log", "Tags"]
 
 
 def split_sections(body: str) -> dict[str, str]:
@@ -40,6 +40,7 @@ def to_row(entry: Entry) -> dict[str, str]:
         "Date": history[0].split(" ", 1)[0],
         "Referenced Rules": "\n".join(entry.rule_references),
         "Change Log": "\n".join(reversed(history)),
+        "Tags": ", ".join(entry.tags),
     }
 
 

@@ -5,6 +5,7 @@ categories:
 - Characters
 turn_order: 0 Faction Rules
 rule_references: []
+tags: []
 ---
 
 ## Question

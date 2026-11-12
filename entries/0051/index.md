@@ -6,6 +6,8 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Wheel through another unit GW FAQ 1.5.1 9
+tags:
+- essential
 ---
 
 ## Question

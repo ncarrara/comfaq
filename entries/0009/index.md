@@ -7,6 +7,8 @@ turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - Formed Units Charging Skirmishers CRB 186
 - Directly Towards CRB 92
+tags:
+- essential
 ---
 
 ## Question

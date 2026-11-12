@@ -6,6 +6,7 @@ categories:
 turn_order: 4-1 Combat Phase Choose Combat & Determine Who Can Fight
 rule_references:
 - Low Linear Obstacle CRB 159
+tags: []
 ---
 
 ## Question

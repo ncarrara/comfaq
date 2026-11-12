@@ -6,6 +6,7 @@ categories:
 turn_order: 3-4 Shooting Phase Remove Casualties & Make Panic Tests
 rule_references:
 - Psychology of War Heavy Casualties CRB 161
+tags: []
 ---
 
 ## Question

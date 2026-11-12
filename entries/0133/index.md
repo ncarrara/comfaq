@@ -7,6 +7,7 @@ turn_order: 0 Faction Rules
 rule_references:
 - Bretonnia Blessings of the Lady FOF 107
 - Bretonnia Grail Vow FOF 108
+tags: []
 ---
 
 ## Question

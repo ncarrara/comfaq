@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Empire of Man
+tags: []
 ---
 
 ## Question

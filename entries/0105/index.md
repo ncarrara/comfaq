@@ -9,6 +9,7 @@ rule_references:
 - Tomb Kings Arise! RH 128
 - Resurrecting the Fallen RH 154
 - Resurrecting the Fallen Vampire Counts 28
+tags: []
 ---
 
 ## Question

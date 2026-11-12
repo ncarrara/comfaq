@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - 'Arcane Journal: Empire of Man'
+tags: []
 ---
 
 ## Question

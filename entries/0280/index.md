@@ -7,6 +7,7 @@ turn_order: 3-3 Shooting Phase Roll to Wound & Make Armour Saves
 rule_references:
 - Split Profile CRB 97
 - Split Profile Warmachines CRB 197
+tags: []
 ---
 
 ## Question

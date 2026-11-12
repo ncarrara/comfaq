@@ -7,6 +7,7 @@ turn_order: 0 Faction Rules
 rule_references:
 - Vampire Counts Mortis Engine 17
 - Accursed ReliquaryBlasphemous Tome
+tags: []
 ---
 
 ## Question

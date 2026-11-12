@@ -7,6 +7,7 @@ turn_order: 4-4 Follow Up & Pursuit
 rule_references:
 - Pursuit CRB 156
 - Evade CRB 206
+tags: []
 ---
 
 ## Question

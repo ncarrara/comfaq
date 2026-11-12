@@ -6,6 +6,8 @@ categories:
 turn_order: 4-3 Combat Phase Break Test
 rule_references:
 - Fleeing through Terrain CRB 133
+tags:
+- essential
 ---
 
 ## Question

@@ -9,6 +9,7 @@ rule_references:
 - Characters & Units CRB 207
 - Unbreakable CRB 179
 - Loner CRB 172
+tags: []
 ---
 
 ## Question

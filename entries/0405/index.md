@@ -7,6 +7,7 @@ turn_order: 0 Faction Rules
 rule_references:
 - Enough for Everyone Armies of Grand Cathay 41
 - GW FAQ
+tags: []
 ---
 
 ## Question

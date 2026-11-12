@@ -7,6 +7,7 @@ turn_order: 4 Combat Phase
 rule_references:
 - GW FAQ
 - Skirmishers in Combat CRB 185
+tags: []
 ---
 
 ## Question

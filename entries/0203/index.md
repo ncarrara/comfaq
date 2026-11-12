@@ -6,6 +6,7 @@ categories:
 turn_order: 0 Faction Rules
 rule_references:
 - Daemons of Chaos Demonic Gifts
+tags: []
 ---
 
 ## Question

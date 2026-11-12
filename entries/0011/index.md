@@ -9,6 +9,7 @@ rule_references:
 - Multiple Wounds (X) CRB 175
 - Overkill and Champions GW FAQ 1.5.1 11
 - Overkill CRB 211
+tags: []
 ---
 
 ## Question

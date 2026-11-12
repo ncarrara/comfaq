@@ -7,6 +7,7 @@ turn_order: 0 Faction Rules
 rule_references:
 - Model Profiles CRB 96 - 97
 - Tomb Kings My Will Be done RH 126
+tags: []
 ---
 
 ## Question

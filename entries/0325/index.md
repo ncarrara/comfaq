@@ -8,6 +8,7 @@ rule_references:
 - Ethereal CRB 167
 - Killing Blow CRB 172
 - Monster Slayer CRB 173
+tags: []
 ---
 
 ## Question

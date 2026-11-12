@@ -7,6 +7,7 @@ turn_order: 4-3 Combat Phase Break Test
 rule_references:
 - GW FAQ
 - Stupidity CRB 178
+tags: []
 ---
 
 ## Question

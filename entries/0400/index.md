@@ -10,6 +10,7 @@ rule_references:
 - Beyond the Crest CRB 271
 - Volley Fire CRB 180
 - Large Target
+tags: []
 ---
 
 ## Question

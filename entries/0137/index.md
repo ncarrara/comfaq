@@ -9,6 +9,7 @@ rule_references:
 - Accidental Contact CRB 131
 - Pursuit off the Battlefield CRB 157
 - Random Movement CRB 176
+tags: []
 ---
 
 ## Question

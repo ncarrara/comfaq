@@ -6,6 +6,8 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Skirmishers CRB 185 – 187Maneuvers CRB 124Reform CRB 125GW FAQ
+tags:
+- essential
 ---
 
 ## Question

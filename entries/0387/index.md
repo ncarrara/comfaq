@@ -7,6 +7,7 @@ turn_order: 0 General Rules
 rule_references:
 - Trophies of War CRB 286
 - Standards CRB 152
+tags: []
 ---
 
 ## Question

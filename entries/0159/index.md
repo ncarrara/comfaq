@@ -7,6 +7,7 @@ turn_order: 3 Shooting Phase
 rule_references:
 - Cannon Fire CRB 226
 - Characters & Shooting CRB 209
+tags: []
 ---
 
 ## Question

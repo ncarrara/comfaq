@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Wood Elf Realms
+tags: []
 ---
 
 ## Question

@@ -8,6 +8,8 @@ rule_references:
 - Who can fight CRB 145
 - How many attacks? CRB 146
 - Multiple Units in Combat CRB 147
+tags:
+- essential
 ---
 
 ## Question

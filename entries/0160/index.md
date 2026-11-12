@@ -6,6 +6,7 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Manoeuvres Reform CRB 125
+tags: []
 ---
 
 ## Question

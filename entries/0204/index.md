@@ -6,6 +6,8 @@ categories:
 turn_order: 2-3 Movement Phase Compulsory Moves
 rule_references:
 - Random Movement CRB 176
+tags:
+- essential
 ---
 
 ## Question

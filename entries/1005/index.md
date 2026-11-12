@@ -9,6 +9,7 @@ categories:
 turn_order: ''
 rule_references:
 - Skaven
+tags: []
 ---
 
 ## Question

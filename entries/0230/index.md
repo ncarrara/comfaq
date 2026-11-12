@@ -6,6 +6,7 @@ categories:
 turn_order: 2-4 Movement Phase Remaining Moves
 rule_references:
 - GW FAQ
+tags: []
 ---
 
 ## Question

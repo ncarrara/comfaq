@@ -7,6 +7,8 @@ turn_order: 4-1 Combat Phase Choose Combat & Determine Who Can Fight
 rule_references:
 - Choose Combat & Determine Who Can Fight CRB 145 - 146Multiple Units in Combat CRB
   147Characters in Combat 209
+tags:
+- essential
 ---
 
 ## Question

@@ -7,6 +7,8 @@ turn_order: 2 Movement Phase
 rule_references:
 - Marching CRB 123
 - Difficult Terrain CRB 135
+tags:
+- essential
 ---
 
 ## Question

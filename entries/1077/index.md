@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - 'Warhammer: The Old World Matched Play Guide'
+tags: []
 ---
 
 ## Question

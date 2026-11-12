@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - 'Arcane Journal: Dwarfen Mountain Holds'
+tags: []
 ---
 
 ## Question

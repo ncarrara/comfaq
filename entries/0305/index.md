@@ -7,6 +7,7 @@ turn_order: 0 Faction Rules
 rule_references:
 - Bretonnia
 - GW FAQ
+tags: []
 ---
 
 ## Question

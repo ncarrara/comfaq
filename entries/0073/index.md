@@ -6,6 +6,7 @@ categories:
 turn_order: 3 Shooting Phase
 rule_references:
 - Measurement CRB 92Minimum Range CRB 212Bombardment CRB 224
+tags: []
 ---
 
 ## Question

@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Characters p202
+tags: []
 ---
 
 ## Question

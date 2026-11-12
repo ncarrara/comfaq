@@ -6,6 +6,8 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Magical Vortexes GW FAQ 1.5.1 8
+tags:
+- essential
 ---
 
 ## Question

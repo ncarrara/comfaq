@@ -6,6 +6,8 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Reserves CRB 285
+tags:
+- essential
 ---
 
 ## Question

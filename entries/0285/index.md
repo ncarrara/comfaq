@@ -6,6 +6,7 @@ categories:
 turn_order: 0 Faction Rules
 rule_references:
 - Orcs and Goblins
+tags: []
 ---
 
 ## Question

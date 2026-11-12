@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Kingdom of Bretonnia
+tags: []
 ---
 
 ## Question

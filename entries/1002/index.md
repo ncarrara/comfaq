@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - High Elf Realms
+tags: []
 ---
 
 ## Question

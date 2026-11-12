@@ -6,6 +6,7 @@ categories:
 turn_order: 3 Shooting Phase
 rule_references:
 - Fire Throwers CRB 229
+tags: []
 ---
 
 ## Question

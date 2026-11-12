@@ -61,7 +61,7 @@ jobs:
           full_commit_message: Built from ${{ github.sha }}
 
       - name: notify discord
-        if: github.ref_name == 'main' || github.ref_name == 'test_faq'
+        if: (github.ref_name == 'main' || github.ref_name == 'test_faq') && !contains(github.event.head_commit.message, '[skip discord]')
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           BEFORE: ${{ github.event.before }}

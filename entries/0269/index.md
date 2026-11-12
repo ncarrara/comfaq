@@ -6,6 +6,8 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Fly (X) CRB 169
+tags:
+- essential
 ---
 
 ## Question

@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Warhammer Battles p284
+tags: []
 ---
 
 ## Question

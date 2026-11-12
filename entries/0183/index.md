@@ -6,6 +6,7 @@ categories:
 turn_order: 2-4 Movement Phase Remaining Moves
 rule_references:
 - Marching CRB 123
+tags: []
 ---
 
 ## Question

@@ -6,6 +6,7 @@ categories:
 turn_order: 3-4 Shooting Phase Remove Casualties & Make Panic Tests
 rule_references:
 - Motley Crew CRB 174Characters & Shooting CRB 209Unstable
+tags: []
 ---
 
 ## Question

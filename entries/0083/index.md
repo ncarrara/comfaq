@@ -6,6 +6,7 @@ categories:
 turn_order: 4-3 Combat Phase Break Test
 rule_references:
 - Directly towards, directly away CRB 92Give Ground CRB 134
+tags: []
 ---
 
 ## Question

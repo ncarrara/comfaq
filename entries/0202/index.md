@@ -7,6 +7,8 @@ turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - Aligning to the Enemy CRB 126
 - Who Strikes first? CRB 146
+tags:
+- essential
 ---
 
 ## Question

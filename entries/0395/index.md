@@ -6,6 +6,7 @@ categories:
 turn_order: 4-1 Combat Phase Choose Combat & Determine Who Can Fight
 rule_references:
 - Hatred CRB 171
+tags: []
 ---
 
 ## Question

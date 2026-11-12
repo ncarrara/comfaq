@@ -7,6 +7,8 @@ turn_order: 3-2 Shooting Phase Roll to Hit
 rule_references:
 - Large Target
 - Cover
+tags:
+- essential
 ---
 
 ## Question

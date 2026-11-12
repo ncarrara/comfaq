@@ -7,6 +7,7 @@ turn_order: 0 General Rules
 rule_references:
 - Reserves CRB 285
 - Ambushers CRB 166
+tags: []
 ---
 
 ## Question

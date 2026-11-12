@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - The Psychology of War p160
+tags: []
 ---
 
 ## Question

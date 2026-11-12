@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Howdah CRB 171
+tags: []
 ---
 
 ## Question

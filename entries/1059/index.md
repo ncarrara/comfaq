@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Weapons of War p212
+tags: []
 ---
 
 ## Question

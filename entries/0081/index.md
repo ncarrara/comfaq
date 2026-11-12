@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Regeneration GW FAQ 1.5.1 3
+tags: []
 ---
 
 ## Question

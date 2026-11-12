@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Warriors of Chaos
+tags: []
 ---
 
 ## Question

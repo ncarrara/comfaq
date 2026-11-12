@@ -7,6 +7,7 @@ turn_order: 0 Faction Rules
 rule_references:
 - High Elves
 - Single Use Magic Items CRB 337
+tags: []
 ---
 
 ## Question

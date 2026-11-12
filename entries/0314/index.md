@@ -7,6 +7,7 @@ turn_order: 4-4 Follow Up & Pursuit
 rule_references:
 - Lumbering CRB 195
 - GW FAQ
+tags: []
 ---
 
 ## Question

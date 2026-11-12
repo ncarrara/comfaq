@@ -7,6 +7,7 @@ turn_order: 0 General Rules
 rule_references:
 - Warband CRB 180
 - GW FAQ
+tags: []
 ---
 
 ## Question

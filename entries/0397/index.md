@@ -5,6 +5,8 @@ categories:
 - Basic Rules
 turn_order: 2 Movement Phase
 rule_references: []
+tags:
+- essential
 ---
 
 ## Question

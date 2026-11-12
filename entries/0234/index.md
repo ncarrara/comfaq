@@ -5,6 +5,7 @@ categories:
 - Basic Rules
 turn_order: 3-2 Shooting Phase Roll to Hit
 rule_references: []
+tags: []
 ---
 
 ## Question

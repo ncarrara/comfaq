@@ -6,6 +6,7 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Phantasmagoria CRB 325
+tags: []
 ---
 
 ## Question

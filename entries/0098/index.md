@@ -6,6 +6,7 @@ categories:
 turn_order: 4-2 Combat Phase Calculate Combat Result
 rule_references:
 - Multiple Wound Models CRB 102Killing Blow CRB 172Killing Blow GW FAQ 1.5.1 7
+tags: []
 ---
 
 ## Question

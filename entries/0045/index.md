@@ -6,6 +6,7 @@ categories:
 turn_order: 2-3 Movement Phase Compulsory Moves
 rule_references:
 - Pursuit off the Battlefield CRB 157Ambushers CRB 166
+tags: []
 ---
 
 ## Question

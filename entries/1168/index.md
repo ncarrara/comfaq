@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - War Machines p222
+tags: []
 ---
 
 ## Question

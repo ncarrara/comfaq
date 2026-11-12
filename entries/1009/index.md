@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - 'Arcane Journal: The War of Settra''s Fury'
+tags: []
 ---
 
 ## Question

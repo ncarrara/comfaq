@@ -7,6 +7,8 @@ turn_order: 0 General Rules
 rule_references:
 - Positioning Characters CRB 207
 - GW FAQ
+tags:
+- essential
 ---
 
 ## Question

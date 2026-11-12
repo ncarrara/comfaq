@@ -7,6 +7,7 @@ turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - GW FAQ
 - Swiftstride CRB 178
+tags: []
 ---
 
 ## Question

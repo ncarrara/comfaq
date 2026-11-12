@@ -5,6 +5,7 @@ categories:
 - Characters
 turn_order: 1-2 Strategy Phase Command
 rule_references: []
+tags: []
 ---
 
 ## Question

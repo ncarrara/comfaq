@@ -6,6 +6,8 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Basic Movement CRB 123 - 124
+tags:
+- essential
 ---
 
 ## Question

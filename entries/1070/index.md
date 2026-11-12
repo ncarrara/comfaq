@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Magic p106
+tags: []
 ---
 
 ## Question

@@ -6,6 +6,7 @@ categories:
 turn_order: 2-1 Movement Phase Declare Charges and Charge Reaction
 rule_references:
 - Redirecting a Charge CRB 129
+tags: []
 ---
 
 ## Question

@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Lores of Magic
+tags: []
 ---
 
 ## Question

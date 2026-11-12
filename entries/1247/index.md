@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - General Principles p92
+tags: []
 ---
 
 ## Question

@@ -6,6 +6,8 @@ categories:
 turn_order: 3-1 Shooting Phase Declare Target
 rule_references:
 - Evasive CRB 168
+tags:
+- essential
 ---
 
 ## Question

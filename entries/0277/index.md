@@ -6,6 +6,8 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Multiple Wound Models CRB 102
+tags:
+- essential
 ---
 
 ## Question

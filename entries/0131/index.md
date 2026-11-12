@@ -6,6 +6,8 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Skirmishers CRB 185 – 187 GW FAQ
+tags:
+- essential
 ---
 
 ## Question

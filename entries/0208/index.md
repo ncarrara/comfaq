@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - GW FAQ Ravening Hordes
+tags: []
 ---
 
 ## Question

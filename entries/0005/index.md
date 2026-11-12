@@ -9,6 +9,7 @@ rule_references:
 - GW FAQ
 - Waaagh Banner, Crusader's Zeal, First to the Fray, Daemon of Slaanesh, 'Ere We Go!,
   Virtue of the Impetuous Knight, Beast Banner
+tags: []
 ---
 
 ## Question

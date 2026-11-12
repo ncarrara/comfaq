@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Warhammer Armies p276
+tags: []
 ---
 
 ## Question

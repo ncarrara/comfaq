@@ -7,6 +7,8 @@ turn_order: 4-4 Follow Up & Pursuit
 rule_references:
 - Pivoting CRB 125
 - Pursuit CRB 156
+tags:
+- essential
 ---
 
 ## Question

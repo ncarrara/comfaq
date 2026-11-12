@@ -11,6 +11,8 @@ rule_references:
 - Choose Combat &Determine Who Can Fight CRB 145ff
 - Stepping Forward & Closing In CRB 150
 - GW FAQ
+tags:
+- essential
 ---
 
 ## Question

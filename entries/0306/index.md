@@ -7,6 +7,8 @@ turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - Ethereal
 - Grinding Wheels
+tags:
+- essential
 ---
 
 ## Question

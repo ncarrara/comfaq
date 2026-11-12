@@ -6,6 +6,8 @@ categories:
 turn_order: 2 Movement Phase
 rule_references:
 - Redress the Ranks CRB 125
+tags:
+- essential
 ---
 
 ## Question

@@ -6,6 +6,8 @@ categories:
 turn_order: 2-4 Movement Phase Remaining Moves
 rule_references:
 - Positioning Characters CRB 207
+tags:
+- essential
 ---
 
 ## Question

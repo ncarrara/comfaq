@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - 'Arcane Journal: Armies of Grand Cathay'
+tags: []
 ---
 
 ## Question

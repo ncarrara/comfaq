@@ -27,7 +27,7 @@ def clean(text: str) -> str:
     return "\n".join(line.rstrip() for line in text.replace("\r\n", "\n").strip().split("\n"))
 
 
-def to_post(entry_type: str, row: dict[str, str]) -> frontmatter.Post:
+def to_post(entry_type: str, row: dict[str, str], tags: list[str]) -> frontmatter.Post:
     return frontmatter.Post(
         format_body(clean(row["Question"]), clean(row["Ruling"])),
         id=int(row["ID"]),
@@ -35,6 +35,7 @@ def to_post(entry_type: str, row: dict[str, str]) -> frontmatter.Post:
         categories=[row["Category"].strip()],
         turn_order=row["Turn Order"].strip(),
         rule_references=[line for line in clean(row["Referenced Rules"]).split("\n") if line],
+        tags=tags,
     )
 
 
@@ -54,13 +55,15 @@ def merge_duplicates(rows_by_id: dict[int, list[tuple[str, dict[str, str]]]]) ->
 
 def import_entries() -> None:
     existing = [entry for entry in load_entries() if isinstance(entry, CommunityEntry)]
+    existing_tags = {entry.id: entry.tags for entry in existing}
     rows_by_id: dict[int, list[tuple[str, dict[str, str]]]] = defaultdict(list)
     for entry_type, gid in TABS.items():
         for row in fetch_rows(gid):
             rows_by_id[int(row["ID"])].append((entry_type, row))
     entries = merge_duplicates(rows_by_id)
     for entry_type, row in entries:
-        write_entry(to_post(entry_type, row))
+        entry_id = int(row["ID"])
+        write_entry(to_post(entry_type, row, existing_tags[entry_id] if entry_id in existing_tags else []))
     removed = [entry for entry in existing if entry.id not in rows_by_id]
     for entry in removed:
         shutil.rmtree(entry.directory)

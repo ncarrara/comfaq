@@ -7,6 +7,8 @@ turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - Drilled CRB 167
 - Multiple Charging Units CRB 130
+tags:
+- essential
 ---
 
 ## Question

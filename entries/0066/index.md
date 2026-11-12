@@ -6,6 +6,7 @@ categories:
 turn_order: 0 Faction Rules
 rule_references:
 - Wood Elves Hawk Eyed Archer FoF 123
+tags: []
 ---
 
 ## Question

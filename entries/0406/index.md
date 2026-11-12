@@ -8,6 +8,8 @@ rule_references:
 - GW FAQ
 - Tome of Spellcraft
 - Buzgob's Knobbly Staff
+tags:
+- essential
 ---
 
 ## Question

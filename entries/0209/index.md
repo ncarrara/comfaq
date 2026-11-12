@@ -6,6 +6,8 @@ categories:
 turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - Accidental Contact CRB 131
+tags:
+- essential
 ---
 
 ## Question

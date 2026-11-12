@@ -6,6 +6,8 @@ categories:
 turn_order: 2-1 Movement Phase Declare Charges and Charge Reaction
 rule_references:
 - Frenzy, Impetuous GW FAQ 1.5.1 9
+tags:
+- essential
 ---
 
 ## Question

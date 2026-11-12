@@ -7,6 +7,7 @@ turn_order: 0 General Rules
 rule_references:
 - Arcane Familiar CRB 343
 - Wizarding Hat
+tags: []
 ---
 
 ## Question

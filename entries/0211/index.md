@@ -7,6 +7,7 @@ turn_order: 0 Faction Rules
 rule_references:
 - Arcane Journal High Elves Lions Cloak
 - Dark Elves Sea Dragon Cloak
+tags: []
 ---
 
 ## Question

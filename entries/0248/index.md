@@ -6,6 +6,7 @@ categories:
 turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - GW FAQ
+tags: []
 ---
 
 ## Question

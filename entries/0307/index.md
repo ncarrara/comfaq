@@ -5,6 +5,8 @@ categories:
 - LLO
 turn_order: 2-2 Movement Phase Charge Moves
 rule_references: []
+tags:
+- essential
 ---
 
 ## Question

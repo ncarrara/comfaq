@@ -7,6 +7,8 @@ turn_order: 0 General Rules
 rule_references:
 - Champions CRB 199
 - Challenges CRB 207ff
+tags:
+- essential
 ---
 
 ## Question

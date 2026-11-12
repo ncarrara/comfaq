@@ -6,6 +6,8 @@ categories:
 turn_order: 1-3 Strategy Phase Conjuration
 rule_references:
 - Hellish Vigour Khsar's Incantation of the Desert Wind
+tags:
+- essential
 ---
 
 ## Question

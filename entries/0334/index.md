@@ -7,6 +7,7 @@ turn_order: 0 General Rules
 rule_references:
 - Frenzy CRB 170
 - GW FAQ
+tags: []
 ---
 
 ## Question

@@ -5,6 +5,8 @@ categories:
 - Magic
 turn_order: 2-4 Movement Phase Remaining Moves
 rule_references: []
+tags:
+- essential
 ---
 
 ## Question

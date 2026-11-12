@@ -6,6 +6,8 @@ categories:
 turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - The 1" Rule CRB 118
+tags:
+- essential
 ---
 
 ## Question

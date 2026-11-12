@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Dead or Fled MPG 19
+tags: []
 ---
 
 ## Question

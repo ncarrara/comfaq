@@ -7,6 +7,7 @@ turn_order: 0 Faction Rules
 rule_references:
 - Single use magic items CRB 337
 - Wollopas One Hit wunda RH 43
+tags: []
 ---
 
 ## Question

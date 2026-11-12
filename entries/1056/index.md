@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Beastmen Brayherds
+tags: []
 ---
 
 ## Question

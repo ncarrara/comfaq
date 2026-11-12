@@ -9,6 +9,7 @@ rule_references:
 - Burning Gaze
 - Lightning Strike
 - Warplightning Cannon
+tags: []
 ---
 
 ## Question

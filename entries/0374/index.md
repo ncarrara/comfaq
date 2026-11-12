@@ -6,6 +6,8 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Line of Sight CRB 103
+tags:
+- essential
 ---
 
 ## Question

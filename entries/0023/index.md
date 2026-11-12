@@ -7,6 +7,8 @@ turn_order: 4-1 Combat Phase Choose Combat & Determine Who Can Fight
 rule_references:
 - Refusing a Challenge 210
 - Nowhere to Run CRB 211
+tags:
+- essential
 ---
 
 ## Question

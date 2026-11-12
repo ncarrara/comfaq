@@ -65,9 +65,11 @@ def import_gw_faq() -> None:
         slugs.add(slug)
         if slug in existing:
             entry_id = existing[slug].id
+            tags = existing[slug].tags
         else:
             entry_id = next_id
             next_id += 1
+            tags = []
         write_entry(frontmatter.Post(
             format_body(clean(fields["question"]), render_ruling(fields["body"])),
             id=entry_id,
@@ -77,6 +79,7 @@ def import_gw_faq() -> None:
             categories=[rule_type["name"]],
             turn_order="",
             rule_references=rule_references(rule_type),
+            tags=tags,
         ))
     removed = [entry for slug, entry in existing.items() if slug not in slugs]
     for entry in removed:

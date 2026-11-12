@@ -6,6 +6,7 @@ categories:
 turn_order: 3-2 Shooting Phase Roll to Hit
 rule_references:
 - Movement & Manoeuvre CRB 185Moving and Shooting CRB 139
+tags: []
 ---
 
 ## Question

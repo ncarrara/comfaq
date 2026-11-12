@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Leadership Tests CRB 97Veterans CRB 180
+tags: []
 ---
 
 ## Question

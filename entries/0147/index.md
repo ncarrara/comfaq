@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Characters & Formation CRB 205
+tags: []
 ---
 
 ## Question

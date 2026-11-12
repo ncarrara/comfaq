@@ -7,6 +7,8 @@ turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - Accidental Contact during a Charge CRB 131
 - Pursuit into a fresh Enemy CRB 157
+tags:
+- essential
 ---
 
 ## Question

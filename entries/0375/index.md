@@ -7,6 +7,7 @@ turn_order: 0 General Rules
 rule_references:
 - GW FAQ
 - Lores of Magic CRB 106
+tags: []
 ---
 
 ## Question

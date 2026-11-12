@@ -8,6 +8,7 @@ categories:
 turn_order: ''
 rule_references:
 - Battlefield Terrain p268
+tags: []
 ---
 
 ## Question

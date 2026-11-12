@@ -7,6 +7,7 @@ turn_order: 2 Movement Phase
 rule_references:
 - GW FAQ
 - Random Movement CRB 176
+tags: []
 ---
 
 ## Question

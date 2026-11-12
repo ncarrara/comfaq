@@ -14,6 +14,7 @@ class BaseEntry(BaseModel):
     categories: list[str]
     turn_order: str
     rule_references: list[str]
+    tags: list[str]
     body: str
     directory: Path
 

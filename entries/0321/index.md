@@ -7,6 +7,7 @@ turn_order: 2-2 Movement Phase Charge Moves
 rule_references:
 - GW FAQ
 - Defended Low Linear Obstacle CRB 270
+tags: []
 ---
 
 ## Question

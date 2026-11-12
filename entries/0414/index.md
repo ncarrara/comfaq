@@ -9,6 +9,8 @@ rule_references:
 - Durthu's Wrath
 - Strike First
 - Strike Last
+tags:
+- essential
 ---
 
 ## Question

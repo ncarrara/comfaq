@@ -6,6 +6,7 @@ categories:
 turn_order: 0 General Rules
 rule_references:
 - Multiple Wounds CRB 176Cumulative Effects CRB 165
+tags: []
 ---
 
 ## Question
