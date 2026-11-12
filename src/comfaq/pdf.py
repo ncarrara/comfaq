@@ -34,14 +34,25 @@ def group_by_category(entries: list[Entry]) -> dict[str, list[Entry]]:
 
 
 def build_pdf(output: Path, branch: str) -> None:
+    render_pdf(output, branch, load_entries(), "")
+
+
+def build_tag_pdf(output: Path, branch: str, tag: str) -> None:
+    entries = [entry for entry in load_entries() if tag in entry.tags]
+    if not entries:
+        raise ValueError(f"no entries tagged {tag!r}")
+    render_pdf(output, branch, entries, tag.capitalize())
+
+
+def render_pdf(output: Path, branch: str, entries: list[Entry], subtitle: str) -> None:
     markdown = MarkdownIt("commonmark")
-    entries = load_entries()
     environment = Environment(loader=PackageLoader("comfaq"), autoescape=True)
     html = environment.get_template("faq.html").render(
         categories=group_by_category(entries),
         bodies={entry.id: render_markdown(markdown, entry) for entry in entries},
         generated_on=date.today().isoformat(),
         branch=branch,
+        subtitle=subtitle,
         type_labels=TYPE_LABELS,
     )
     HTML(string=html, base_url=str(ENTRIES_DIR)).write_pdf(output, stylesheets=[CSS(filename=TEMPLATES_DIR / "faq.css")])

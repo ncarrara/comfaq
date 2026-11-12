@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>The Old World Community FAQ</title>
+  <title>The Old World Community FAQ{% if subtitle %} - {{ subtitle }}{% endif %}</title>
 </head>
 <body>
 <section class="cover">
   <h1>The Old World<br>Community FAQ</h1>
+  {% if subtitle %}<h2>{{ subtitle }}</h2>{% endif %}
   <p class="branch">Branch {{ branch }}</p>
   <p>Generated on {{ generated_on }}</p>
 </section>

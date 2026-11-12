@@ -8,7 +8,7 @@ from comfaq.csv_export import build_csv
 from comfaq.discord import send_discord
 from comfaq.import_gsheet import import_entries
 from comfaq.import_gw_faq import import_gw_faq
-from comfaq.pdf import build_pdf
+from comfaq.pdf import build_pdf, build_tag_pdf
 from comfaq.tags import add_tag
 
 app = typer.Typer()
@@ -32,6 +32,11 @@ def add_tag_command(tag: str, ids_file: Path) -> None:
 @app.command()
 def pdf(output: Path, branch: Annotated[str, typer.Option()]) -> None:
     build_pdf(output, branch)
+
+
+@app.command("tag-pdf")
+def tag_pdf(output: Path, branch: Annotated[str, typer.Option()], tag: Annotated[str, typer.Option()]) -> None:
+    build_tag_pdf(output, branch, tag)
 
 
 @app.command("csv")
